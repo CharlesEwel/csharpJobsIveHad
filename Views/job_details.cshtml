@@ -9,6 +9,14 @@
     <p>
       @Model.GetJobName()
     </p>
+
+    <h3>Responsibilities</h3>
+    <ul>
+      @foreach(var responsibility in Model.GetResponsibilities())
+      {
+        <li>@responsibility</li>
+      }
+    </ul>
     <a href="/add_job">Add a New Job</a>
     <a href="/jobs">View All Jobs</a>
     <a href="/">Home</a>

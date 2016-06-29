@@ -5,6 +5,7 @@ namespace myJob.Objects
   public class Job
   {
     private string _jobName;
+    private List<string> _responsibilities = new List<string>{};
     private static List<Job> _instances = new List<Job>{};
     public Job(string JobName)
     {
@@ -40,5 +41,13 @@ namespace myJob.Objects
       _jobName = newJobName;
     }
 
+    public void AddResponsibility(string newResponsibility)
+    {
+      _responsibilities.Add(newResponsibility);
+    }
+    public List<string> GetResponsibilities()
+    {
+      return _responsibilities;
+    }
   }
 }

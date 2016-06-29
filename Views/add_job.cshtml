@@ -7,14 +7,16 @@
     <script src="Content/js/scripts.js"></script>
   </head>
   <body>
-    <form action="/jobs" method="post">
+    <form id="job-form" action="/jobs" method="post">
       <label for ="new-job">Add a new job</label>
       <input id ="new-job" name="new-job" type="text" required>
-      <div class="responsibilityInputDiv">
-        <label for ="new-responsibility0">Add a new responsibility</label>
-        <input id ="new-responsibility0" name="new-responsibility0" type="text" required>
+      <div id="responsibilityInputDiv">
+        <div class="new-responsibility">
+          <label for = "responsibility-description">Add a new responsibility</label>
+          <input class ="responsibility-description" name="responsibility-description0" type="text" required>
+        </div>
       </div>
-      <button type="button" class="additional-responsibility">Add another Responsibility</button>
+      <button type="button" class="additional-responsibility" formaction="/addresponsibility">Add another Responsibility</button>
       <button type="submit">Submit</button>
     </form>
     <a href="/jobs">View All Jobs</a>
