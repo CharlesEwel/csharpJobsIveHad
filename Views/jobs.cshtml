@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Resume</title>
+  </head>
+  <body>
+    <h1>Jobs I've Had</h1>
+      <ul>
+        @foreach (var job in Model)
+        {
+          <li><a href="/jobs/@job.GetJobName()">@job.GetJobName()</a></li>
+        }
+      </ul>
+      <a href="/add_job">Add a New Job</a>
+      <a href="/">Home</a>
+  </body>
+</html>
