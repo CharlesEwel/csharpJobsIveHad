@@ -2,8 +2,9 @@ $(document).ready(function(){
   //Responsibility Field ID Number:
   i = 1;
   $(".additional-responsibility").click(function(){
-    $("#responsibilityInputDiv").append('<br><label for ="new-responsibility'+i+'">Add a new responsibility</label>'+
-                                        '<input id ="new-responsibility'+i+'" name="new-responsibility'+i+'" type="text" required>')
+    $("#responsibilityInputDiv").append('<br><label for ="responsibility-description'+i+'">Add a new responsibility</label>'+
+    '<input id ="responsibility-description'+i+'" name="responsibility-description'+i+'" type="text" required>');
+    $("#number-of-responsibilities").val(i+1);
     i ++;
   });
 

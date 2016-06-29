@@ -8,12 +8,12 @@ namespace myJobs
   {
     public HomeModule()
     {
-      Get["/"]=_=>View["index.cshtml"];
       int i=0;
-      Get["/addresponsibility"] =_=> {
-        i++;
-        return View["/add_jobs.cshtml"];
-      };
+      Get["/"]=_=>View["index.cshtml"];
+      // Post["/addresponsibility"] =_=> {
+      //   i++;
+      //   return View["/add_jobs.cshtml", i];
+      // };
       Get["/add_job"]=_=>View["add_job.cshtml"];
       Get["/jobs"] =_=>{
         List<Job> jobList = Job.GetAll();
@@ -24,7 +24,7 @@ namespace myJobs
       Post["/jobs"] = _ => {
         Job newJob = new Job (Request.Form["new-job"]);
         //Loop through responsibility inputs
-        for(int j = 0; j<=i; j++)
+        for(int j = 0; j<Request.Form["number-of-responsibilities"]; j++)
         {
           string idString = "responsibility-description" + j;
 
